@@ -6,7 +6,10 @@ const addData = () => {
     const quantityValue = document.getElementById('quantity');
     const quantity = quantityValue.value;
     quantityValue.value = '';
-    displayData(product, quantity);   
+    displayData(product, quantity);
+    getLocalStorageData();
+    saveDataToLocalStorage(product, quantity)
+
 }
 
 let number = 0;
@@ -17,4 +20,22 @@ const displayData = (product, quantity) => {
         ${number += 1}. ${product} : ${quantity}
     `;
     getContainer.appendChild(p)
+}
+
+const getLocalStorageData = () => {
+    let getCart = {};
+    const storedCart = localStorage.getItem('getCart');
+
+    if(storedCart){
+        getCart = JSON.parse(storedCart);
+    }
+    return getCart;
+}
+
+const saveDataToLocalStorage = (product, quantity) => {
+    const getCart = getLocalStorageData();
+    getCart[product] = quantity;
+    const cartStringify = JSON.stringify(getCart);
+    localStorage.setItem('getCart', cartStringify);
+    console.log(stringify);
 }
