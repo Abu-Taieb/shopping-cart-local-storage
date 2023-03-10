@@ -8,3 +8,13 @@ const addData = () => {
     quantityValue.value = '';
     displayData(product, quantity);   
 }
+
+let number = 0;
+const displayData = (product, quantity) => {
+    const getContainer = document.getElementById('container');
+    const p = document.createElement('p');
+    p.innerText = `
+        ${number += 1}. ${product} : ${quantity}
+    `;
+    getContainer.appendChild(p)
+}
