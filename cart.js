@@ -15,11 +15,11 @@ const addData = () => {
 let number = 0;
 const displayData = (product, quantity) => {
     const getContainer = document.getElementById('container');
-    const p = document.createElement('p');
-    p.innerText = `
-        ${number += 1}. ${product} : ${quantity}
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <p class="border border-orange-200 my-2 rounded-md py-1 px-3">${number += 1}. ${product} : ${quantity} pcs</p>
     `;
-    getContainer.appendChild(p)
+    getContainer.appendChild(div)
 }
 
 const getLocalStorageData = () => {
@@ -37,5 +37,14 @@ const saveDataToLocalStorage = (product, quantity) => {
     getCart[product] = quantity;
     const cartStringify = JSON.stringify(getCart);
     localStorage.setItem('getCart', cartStringify);
-    console.log(stringify);
 }
+
+const displaySaveData = () => {
+    const getData = getLocalStorageData();
+    for(const product in getData){
+        const quantity = getData[product];
+        displayData(product, quantity);
+    }
+    
+}
+displaySaveData()
