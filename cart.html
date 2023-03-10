@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+        <div class="w-6/12 mx-auto mt-6">
+            <h2 class="text-center text-3xl text-pink-500 font-bold border border-pink-500 p-3 rounded-lg">Add data to Local Storage</h2>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="w-6/12 mx-auto flex flex-col md:flex-row justify-center mt-10">
+                <input id="product" class="border border-orange-300 py-2 px-3 rounded-md m-1" type="text" placeholder="Product name" />
+                <input id="quantity" class="border border-orange-300 py-2 px-3 rounded-md m-1" type="number" placeholder="Product quantity" />
+          
+                <button onclick="addData()" id="add-btn" class="border border-orange-300 py-2 px-3 rounded-md bg-orange-600 text-white hover:bg-orange-400 m-1" >ADD</button>
+          
+                <div id="container">
+          
+                </div>
+          
+              </div>
+        </section>
+    </main>
+    <script src="cart.js"></script>
+    <script src="tailwind.config.js"></script>
+  </body>
+</html>
